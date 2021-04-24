@@ -6,7 +6,8 @@ export const Card = styled.div`
   height: 100vh;
   max-height: 400px;
 
-  background-color: #1c923ae8;
+  background-color: ${props => props.theme.colors.background.card};
+  color: ${props => props.theme.colors.text.foreground};
 
   padding: 15px;
   margin: 12px;

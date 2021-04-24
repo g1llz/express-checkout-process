@@ -9,14 +9,16 @@ const initialState = {
 
 const sumProducts = (products: Partial<IProduct[]>) =>
   products.reduce((acc: number, item: any) => {
-    return acc + item.price
+    return acc + item.amount
   }, 0)
 
 const reducer = (state = initialState, action: IReduxAction) => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload.cart }
-    case 'ADD_ITEM':
+    case 'RESET_CART':
+      return { ...initialState }
+    case 'ADD_ITEM_CART':
       const updated = {
         ...state,
         products: [...state.products, action.payload]
