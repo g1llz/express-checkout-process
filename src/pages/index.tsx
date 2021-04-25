@@ -2,20 +2,33 @@ import { GetStaticProps } from 'next'
 import { Fragment } from 'react'
 
 import HeaderBar from '../components/HeaderBar'
-import ProductList from '../components/ProductList'
+import Product, { IProduct } from '../components/Product'
 
 import { Container } from '../styles/elements/Container'
-import { Space } from '../styles/elements/Space'
+import { HSpacer } from '../styles/elements/HSpacer'
+import { Text } from '../styles/elements/Text'
 
-export default function Home({ products }) {
+interface HomeProps {
+  products: IProduct[]
+}
+
+export default function Home({ products }: HomeProps) {
   return (
     <Fragment>
       <HeaderBar />
 
-      <Space />
+      <HSpacer space="1rem"/>
+
+      <Text>
+        <h1>Products</h1>
+      </Text>
+
+      <HSpacer space="1rem"/>
 
       <Container>
-        <ProductList products={products} />
+        {products.map(product => (
+          <Product key={product.id} product={product} />
+        ))}
       </Container>
     </Fragment>
   )
