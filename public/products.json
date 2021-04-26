@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "image": "https://avatars.dicebear.com/api/micah/cvw.svg?m=5&b=%23a5c8b5&w=128&h=128",
+      "image": "/plant_1.png",
       "title": "Ficus",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "small",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "image": "https://avatars.dicebear.com/api/micah/czbw.svg?m=5&b=%23a9a1af&w=128&h=128",
+      "image": "/plant_2.png",
       "title": "Aloe vera",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "medium",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "image": "https://avatars.dicebear.com/api/micah/czpbw.svg?m=5&b=%23669275&w=128&h=128",
+      "image": "/plant_3.png",
       "title": "Xyz",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "small",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "image": "https://avatars.dicebear.com/api/micah/xcd.svg?m=5&b=%231c923a&w=128&h=128",
+      "image": "/plant_4.png",
       "title": "Bracken",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "large",
