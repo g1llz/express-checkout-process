@@ -29,4 +29,8 @@ export default createGlobalStyle`
   h2 {
     font-weight: 700;
   }
+
+  h3 {
+    width: 100%;
+  }
 `

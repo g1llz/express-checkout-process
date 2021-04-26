@@ -19,7 +19,7 @@ export const Box = styled.div`
 
   .grid-a {
     grid-column: 3/3;
-    margin-left: 30px;
+    margin-left: 10px;
   }
 
   .grid-b {
@@ -59,12 +59,35 @@ export const Box = styled.div`
 
     .grid-b {
       grid-column: 2/3;
-      grid-row: 2/5;
+      grid-row: 2/3;
+      height: 150px;
     }
 
     .grid-c,
     .grid-d {
       grid-column: 1/3;
+    }
+
+    [data-wrapper='false'] {
+      position: absolute;
+      top: 50px;
+      left: 25px;
+
+      img {
+        width: 220px !important;
+        height: 220px !important;
+      }
+    }
+
+    [data-wrapper='true'] {
+      position: absolute;
+      top: 50px;
+      left: 5px;
+
+      img {
+        width: 256px !important;
+        height: 256px !important;
+      }
     }
   }
 
@@ -79,6 +102,16 @@ export const Box = styled.div`
 
     &[data-expand='true'] {
       width: 365px;
+    }
+
+    [data-wrapper='false'] {
+      top: 50px;
+      left: 45px;
+    }
+
+    [data-wrapper='true'] {
+      top: 50px;
+      left: 10px;
     }
   }
 `
