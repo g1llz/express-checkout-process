@@ -25,37 +25,37 @@ export default function Form({ onCancel, onSubmit }: FormProps) {
   return (
     <WrapperForm>
       <form>
-        <Flex direction="column">
+        <Flex direction="column" className="grid-a">
           <label htmlFor="fullName">Full Name</label>
           <Input {...register('fullName', { required: true })} role="textbox" />
           <span role="alert">{errors.fullName && 'Name is required'}</span>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" className="grid-b">
           <label htmlFor="email">E-mail</label>
           <Input {...register('email', { required: true })} />
           <span role="alert">{errors.email && 'E-mail is required'}</span>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" className="grid-c">
           <label htmlFor="address">Address</label>
           <Input {...register('address', { required: true, minLength: 10 })} />
           <span role="alert">{errors.address && 'Address is required'}</span>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" className="grid-d">
           <label htmlFor="country">Country</label>
           <Input {...register('country', { required: true })} />
           <span role="alert">{errors.country && 'Country is required'}</span>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" className="grid-e">
           <label htmlFor="zipcode">Postal code</label>
           <Input {...register('zipCode', { required: true })} />
           <span role="alert">{errors.zipCode && 'Postal code is required'}</span>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" className="grid-f">
           <label htmlFor="phone">Phone number</label>
           <Input {...register('phone', { required: true })} />
           <span role="alert">{errors.phone && 'Phone number is required'}</span>

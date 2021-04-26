@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "image": "/plant_1.png",
+      "image": "/plant_4.png",
       "title": "Ficus",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "small",
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "image": "/plant_2.png",
-      "title": "Aloe vera",
+      "title": "Aloha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "medium",
       "backgroundColor": null,
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "image": "/plant_4.png",
+      "image": "/plant_1.png",
       "title": "Bracken",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "size": "large",

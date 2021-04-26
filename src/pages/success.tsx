@@ -47,7 +47,7 @@ export default function Success() {
 
       <Container>
         {!!products.length && (
-          <Flex direction="column">
+          <Flex direction="column" data-pages="success">
             <p>
               Your order has been completed. Don't worry, now all the
               information will be sent in the registered email.
@@ -68,7 +68,11 @@ export default function Success() {
 
             <HSpacer />
 
-            <Flex direction="column" content="flex-start" alignItems="end">
+            <Flex
+              direction="column"
+              content="flex-start"
+              alignItems="end"
+            >
               <span>Name</span>
               <h4>{shipping.fullName}</h4>
 
