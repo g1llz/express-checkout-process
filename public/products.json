@@ -2,39 +2,39 @@
   "products": [
     {
       "id": 1,
-      "image": "https://i.pravatar.cc/300?img=1",
+      "image": "https://avatars.dicebear.com/api/micah/cvw.svg?m=5&b=%23a5c8b5&w=128&h=128",
       "title": "Ficus",
-      "description": "something",
-      "sizes": ["xs", "s", "m", "l", "xl"],
-      "colors": ["red", "blue"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "size": "small",
+      "backgroundColor": null,
       "price": 29.34
     },
     {
       "id": 2,
-      "image": "https://i.pravatar.cc/300?img=2",
+      "image": "https://avatars.dicebear.com/api/micah/czbw.svg?m=5&b=%23a9a1af&w=128&h=128",
       "title": "Aloe vera",
-      "description": "something",
-      "sizes": ["m", "l", "xl"],
-      "colors": ["orange", "yellow"],
-      "price": 29.34
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "size": "medium",
+      "backgroundColor": null,
+      "price": 19
     },
     {
       "id": 3,
-      "image": "https://i.pravatar.cc/300?img=3",
+      "image": "https://avatars.dicebear.com/api/micah/czpbw.svg?m=5&b=%23669275&w=128&h=128",
       "title": "Xyz",
-      "description": "something",
-      "sizes": ["xs", "l", "xl"],
-      "colors": ["red", "grey"],
-      "price": 29.34
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "size": "small",
+      "backgroundColor": null,
+      "price": 49.5
     },
     {
       "id": 4,
-      "image": "https://i.pravatar.cc/300?img=4",
+      "image": "https://avatars.dicebear.com/api/micah/xcd.svg?m=5&b=%231c923a&w=128&h=128",
       "title": "Bracken",
-      "description": "something",
-      "sizes": ["l", "xl"],
-      "colors": ["pink", "black"],
-      "price": 29.34
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "size": "large",
+      "backgroundColor": null,
+      "price": 9.9
     }
   ]
 }
