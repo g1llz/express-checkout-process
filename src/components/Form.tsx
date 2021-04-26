@@ -27,38 +27,38 @@ export default function Form({ onCancel, onSubmit }: FormProps) {
       <form>
         <Flex direction="column">
           <label htmlFor="fullName">Full Name</label>
-          <Input {...register('fullName', { required: true })} />
-          <span>{errors.fullName && 'Name is required'}</span>
+          <Input {...register('fullName', { required: true })} role="textbox" />
+          <span role="alert">{errors.fullName && 'Name is required'}</span>
         </Flex>
 
         <Flex direction="column">
           <label htmlFor="email">E-mail</label>
           <Input {...register('email', { required: true })} />
-          <span>{errors.email && 'Email is required'}</span>
+          <span role="alert">{errors.email && 'E-mail is required'}</span>
         </Flex>
 
         <Flex direction="column">
           <label htmlFor="address">Address</label>
           <Input {...register('address', { required: true, minLength: 10 })} />
-          <span>{errors.address && 'Address is required'}</span>
+          <span role="alert">{errors.address && 'Address is required'}</span>
         </Flex>
 
         <Flex direction="column">
           <label htmlFor="country">Country</label>
           <Input {...register('country', { required: true })} />
-          <span>{errors.country && 'Country is required'}</span>
+          <span role="alert">{errors.country && 'Country is required'}</span>
         </Flex>
 
         <Flex direction="column">
           <label htmlFor="zipcode">Postal code</label>
           <Input {...register('zipCode', { required: true })} />
-          <span>{errors.zipCode && 'Postal code is required'}</span>
+          <span role="alert">{errors.zipCode && 'Postal code is required'}</span>
         </Flex>
 
         <Flex direction="column">
           <label htmlFor="phone">Phone number</label>
           <Input {...register('phone', { required: true })} />
-          <span>{errors.phone && 'Phone number is required'}</span>
+          <span role="alert">{errors.phone && 'Phone number is required'}</span>
         </Flex>
 
         <HSpacer />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import Image from 'next/image'
 import {
   faArrowLeft,
   faExpand,
@@ -8,6 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { addItem } from '../store/actions/cart'
+import { IProduct } from '../interfaces/product'
 
 import { Box } from '../styles/elements/Box'
 import { Button, CircleButton } from '../styles/elements/Button'
@@ -16,7 +18,6 @@ import { CardDescription } from '../styles/elements/CardDescription'
 import { HSpacer } from '../styles/elements/HSpacer'
 
 import HandleQuantity from './HandleQuantity'
-import { IProduct } from '../interfaces/product'
 
 interface ProductProps {
   product: IProduct
@@ -65,11 +66,18 @@ export default function Product({ product }: ProductProps) {
       <Box data-expand={expand}>
         <div className="grid-a">
           <span>From</span>
-          <h2>${product.price}</h2>
+          <h2>${product.price.toFixed(2)}</h2>
         </div>
 
         <div className="grid-b">
-          <img src={product.image} />
+          <div data-wrapper={expand}>
+            <Image
+              src={product.image}
+              alt={product.title}
+              width={128}
+              height={128}
+            />
+          </div>
         </div>
 
         <div className="grid-c">

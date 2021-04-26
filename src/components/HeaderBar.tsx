@@ -1,4 +1,4 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Flex } from '../styles/elements/Flex'
@@ -10,8 +10,7 @@ export default function HeaderBar() {
   return (
     <Header>
       <Flex>
-        {/* <h1>CoolBrand</h1> */}
-        <FontAwesomeIcon icon={faBars} size="2x" />
+        <FontAwesomeIcon icon={faSeedling} size="2x" color="#1c923a" />
         <Cart />
       </Flex>
     </Header>

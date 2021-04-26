@@ -18,7 +18,7 @@ export default function ProductList({ products, amount }: ProductListProps) {
               <span>
                 {product.quantity}x <strong>{product.title}</strong>
               </span>
-              <span>{product.amount}</span>
+              <span>{product.amount.toFixed(2)}</span>
             </Flex>
           </ListItem>
         ))}
@@ -28,7 +28,7 @@ export default function ProductList({ products, amount }: ProductListProps) {
 
       <Flex>
         <span>Total</span>
-        <h2>${amount}</h2>
+        <h2>${amount.toFixed(2)}</h2>
       </Flex>
     </Fragment>
   )
