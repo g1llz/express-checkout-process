@@ -2,39 +2,28 @@ import { useForm } from 'react-hook-form'
 
 import { Button } from '../styles/elements/Button'
 import { Flex } from '../styles/elements/Flex'
-import { FormWrapper } from '../styles/elements/Form'
 import { HSpacer } from '../styles/elements/HSpacer'
-
+import { WrapperForm } from '../styles/elements/Wrapper'
 import { Input } from '../styles/elements/Input'
 
-interface IFormInput {
-  fullName: string
-  email: string
-  address: string
-  country: string
-  zipCode: string
-  phone: string
-}
+import { IFormInput } from '../interfaces/form'
 
 interface FormProps {
   onCancel: () => void
-  onSubmit: () => void
+  onSubmit: (data: IFormInput) => void
 }
 
-export default function Form({ onCancel, onSubmit }) {
+export default function Form({ onCancel, onSubmit }: FormProps) {
   const {
     register,
     formState: { errors },
     handleSubmit
   } = useForm<IFormInput>()
 
-  const prepareSubmit = (data: IFormInput) => {  
-    console.log(data)
-    onSubmit()
-  }
+  const prepareSubmit = (data: IFormInput) => onSubmit(data)
 
   return (
-    <FormWrapper>
+    <WrapperForm>
       <form>
         <Flex direction="column">
           <label htmlFor="fullName">Full Name</label>
@@ -94,6 +83,6 @@ export default function Form({ onCancel, onSubmit }) {
           </Button>
         </Flex>
       </form>
-    </FormWrapper>
+    </WrapperForm>
   )
 }
