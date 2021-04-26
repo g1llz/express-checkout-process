@@ -48,7 +48,7 @@ describe(Product.name, () => {
     expect(screen.getByTestId('plus-cart-icon')).toBeInTheDocument()
   })
 
-  test('should called the dispatch method', async () => {
+  test('should be call the dispatch method', async () => {
     render(
       <Provider store={store}>
         <ThemeProvider theme={theme}>

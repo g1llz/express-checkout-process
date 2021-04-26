@@ -28,7 +28,7 @@ describe(HandleQuantity.name, () => {
     expect(h2.innerHTML).toBe(String(1))
   })
 
-  test('should called increment after clicked', () => {
+  test('should be call increment after clicked', () => {
     const increment = jest.fn()
     const decrement = jest.fn()
 
@@ -46,7 +46,7 @@ describe(HandleQuantity.name, () => {
     expect(increment).toBeCalledTimes(1)
   })
 
-  test('should called decrement after clicked', () => {
+  test('should be call decrement after clicked', () => {
     const increment = jest.fn()
     const decrement = jest.fn()
 
@@ -80,8 +80,8 @@ describe(HandleQuantity.name, () => {
     
     const button = screen.getByTestId('minus-icon').closest('button');
     userEvent.click(screen.getByTestId('minus-icon'))
-    expect(decrement).toBeCalledTimes(0)
 
+    expect(decrement).toBeCalledTimes(0)
     expect(button).toHaveAttribute('disabled')
   })
 })

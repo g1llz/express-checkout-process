@@ -60,7 +60,7 @@ describe(CartSumamary.name, () => {
     expect(screen.getByText('$50.5')).toBeInTheDocument()
   })
 
-  test('should called checkout method when has products', async () => {
+  test('should be call checkout method when has products', async () => {
     const reset = jest.fn()
     const checkout = jest.fn()
 
@@ -80,7 +80,7 @@ describe(CartSumamary.name, () => {
     expect(checkout).toBeCalledTimes(1)
   })
 
-  test('should called reset method after clicked', async () => {
+  test('should be call reset method after clicked', async () => {
     const reset = jest.fn()
     const checkout = jest.fn()
 
