@@ -1,21 +1,69 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
-  width: 100%;
-  max-width: 300px;
-  height: 100vh;
-  max-height: 400px;
+interface CardProps {
+  bgColor?: string
+}
 
-  background-color: ${props => props.theme.colors.background.card};
+export const Card = styled.div<CardProps>`
+  &[data-expand='true'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding-top: 60px;
+    border-radius: 0;
+    z-index: 8;
+  }
+
+  &[data-expand='false'] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 10px 15px 10px 0;
+    border-radius: 10px;
+  }
+
+  background-color: ${props =>
+    props.bgColor || props.theme.colors.background.card};
   color: ${props => props.theme.colors.text.foreground};
 
-  padding: 15px;
-  margin: 12px;
-  border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
 
   img {
-    height: 100%;
-    max-height: 250px;
+    width: 128px;
+    height: 128px;
+  }
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  button.close {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 50px;
+  }
+
+  @media (min-width: 360px) {
+    &[data-expand='true'] {
+      margin: 0;
+    }
+
+    &[data-expand='false'] {
+      margin: 10px 20px 10px 10px;
+    }
+  }
+
+  @media (min-width: 401px) {
+    &[data-expand='true'] {
+      margin: 0;
+    }
+
+    &[data-expand='false'] {
+      margin: 10px 25px 10px 15px;
+    }
   }
 `

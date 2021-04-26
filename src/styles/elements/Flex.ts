@@ -3,6 +3,7 @@ import styled from 'styled-components'
 interface FlexProps {
   content?: string
   width?: string
+  direction?: string
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -12,4 +13,6 @@ export const Flex = styled.div<FlexProps>`
   display: flex;
   justify-content: ${props => props.content || 'space-between'};
   align-items: center;
+
+  flex-direction: ${props => props.direction || 'initial'};
 `

@@ -14,11 +14,9 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
+  height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: ${props => props.direction || 'column'};
-  flex-wrap: ${props => props.wrap || 'nowrap'};
+  display: inline-flex;
+  overflow-y: hidden;
+  padding: 0 10px;
 `
