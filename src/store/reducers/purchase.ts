@@ -10,6 +10,8 @@ const reducer = (state = initialState, action: IReduxAction) => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload.purchase }
+    case 'RESET_PURCHASE':
+      return { ...initialState }
     case 'ADD_PURCHASE':
       return { ...state, ...action.payload }
     default:
