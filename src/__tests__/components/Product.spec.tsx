@@ -19,7 +19,7 @@ const store = mockStore({
 
 const mockedProduct = {
   id: 4,
-  image: 'https://image.test.io',
+  image: '/plan_b.png',
   title: 'Test product',
   description: 'Something else',
   size: 'small',
@@ -39,10 +39,8 @@ describe(Product.name, () => {
 
     expect(screen.getByText('Test product')).toBeInTheDocument()
     expect(screen.getByText('$19.93')).toBeInTheDocument()
-    expect(screen.getByTestId('expand-icon')).toBeInTheDocument()
 
-    const button = screen.getByTestId('expand-icon').closest('button')
-    userEvent.click(button)
+    userEvent.click(screen.getByTestId('product-component'))
 
     expect(screen.getByText('Something else')).toBeInTheDocument()
     expect(screen.getByTestId('plus-cart-icon')).toBeInTheDocument()
@@ -57,8 +55,7 @@ describe(Product.name, () => {
       </Provider>
     )
 
-    const expandButton = screen.getByTestId('expand-icon').closest('button')
-    userEvent.click(expandButton)
+    userEvent.click(screen.getByTestId('product-component'))
 
     const addItemButton = screen.getByTestId('plus-cart-icon').closest('button')
     userEvent.click(addItemButton)

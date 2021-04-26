@@ -57,7 +57,7 @@ describe(CartSumamary.name, () => {
 
     expect(screen.getByText('Test product')).toBeInTheDocument()
     expect(screen.getByText('2x')).toBeInTheDocument()
-    expect(screen.getByText('$50.5')).toBeInTheDocument()
+    expect(screen.getByText('$50.50')).toBeInTheDocument()
   })
 
   test('should be call checkout method when has products', async () => {

@@ -19,7 +19,7 @@ const store = mockStore({
 const mockedProducts = [
   {
     id: 4,
-    image: 'https://image.test.io',
+    image: '/plant_xx.png',
     title: 'Test product 1',
     description: 'Something else',
     size: 'small',
@@ -28,7 +28,7 @@ const mockedProducts = [
   },
   {
     id: 5,
-    image: 'https://image.test.io',
+    image: '/plant_xx.png',
     title: 'Test product 2',
     description: 'Something else',
     size: 'small',
