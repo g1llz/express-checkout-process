@@ -16,4 +16,11 @@ export const Flex = styled.div<FlexProps>`
   align-items: ${props => props.alignItems || 'center' };
 
   flex-direction: ${props => props.direction || 'initial'};
+
+  @media (min-width: 767px) {
+    &[data-pages='success'] {
+      max-width: 500px;
+      justify-content: center;
+    }
+  }
 `

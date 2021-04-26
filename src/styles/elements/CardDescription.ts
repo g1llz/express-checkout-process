@@ -12,7 +12,15 @@ export const CardDescription = styled.div`
   border-top-right-radius: 14px;
   width: 100%;
   height: 100%;
-  
+
   padding: 20px 30px;
   margin-top: 30px;
+
+  @media (min-width: 767px) {
+    &[data-description='detail'] {
+      height: auto;
+      color: ${props => props.theme.colors.text.foreground};
+      background-color: transparent;
+    }
+  }
 `

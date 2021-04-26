@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const WrapperSummary = styled.div`
   position: absolute;
   display: block;
+  width: 100%;
 
   top: -10px;
   right: -10px;
-  left: -10px;
 
   z-index: 9;
 
@@ -27,6 +27,12 @@ export const WrapperSummary = styled.div`
       padding: 0 20px;
     }
   }
+
+  @media (min-width: 767px) {
+    max-width: 350px;
+    top: 60px;
+    border-radius: 4px;
+  }
 `
 
 export const WrapperList = styled.div<{
@@ -41,11 +47,14 @@ export const WrapperList = styled.div<{
 
   background-color: ${props => props.bgColor || 'transparent'};
   color: ${props => props.textColor || props.theme.colors.text.primary};
+
+  @media (min-width: 767px) {
+    max-width: 500px;
+  }
 `
 
 export const WrapperForm = styled.div`
   width: 100%;
-  /* padding: 10px; */
   padding-bottom: 2rem;
 
   form {
@@ -58,6 +67,46 @@ export const WrapperForm = styled.div`
 
       font-size: 13px;
       color: crimson;
+    }
+  }
+
+  @media (min-width: 767px) {
+    max-width: 500px;
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+
+      grid-template-areas:
+        'name name'
+        'email phone'
+        'address address'
+        'country zipcode';
+
+      .grid-a {
+        grid-area: name;
+      }
+
+      .grid-b {
+        grid-area: email;
+      }
+
+      .grid-c {
+        grid-area: address;
+      }
+
+      .grid-d {
+        grid-area: country;
+      }
+
+      .grid-e {
+        grid-area: zipcode;
+      }
+
+      .grid-f {
+        grid-area: phone;
+      }
     }
   }
 `

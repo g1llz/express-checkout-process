@@ -5,36 +5,16 @@ interface CardProps {
 }
 
 export const Card = styled.div<CardProps>`
-  &[data-expand='true'] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding-top: 60px;
-    border-radius: 0;
-    z-index: 8;
-  }
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 10px 15px 10px 0;
+  border-radius: 10px;
 
-  &[data-expand='false'] {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 10px 15px 10px 0;
-    border-radius: 10px;
-  }
-
-  background-color: ${props =>
-    props.bgColor || props.theme.colors.background.card};
+  background-color: ${props => props.bgColor || props.theme.colors.background.card};
   color: ${props => props.theme.colors.text.foreground};
 
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
-
-  img {
-    width: 128px;
-    height: 128px;
-  }
 
   h2 {
     text-transform: capitalize;
@@ -47,23 +27,44 @@ export const Card = styled.div<CardProps>`
     width: 50px;
   }
 
-  @media (min-width: 360px) {
-    &[data-expand='true'] {
-      margin: 0;
-    }
+  &[data-testid='product-component'] {
+    cursor: pointer;
+  }
 
-    &[data-expand='false'] {
-      margin: 10px 20px 10px 10px;
-    }
+  @media (min-width: 360px) {
+    margin: 10px 20px 10px 10px;
   }
 
   @media (min-width: 401px) {
-    &[data-expand='true'] {
+    margin: 10px 25px 10px 15px;
+  }
+
+  @media (min-width: 767px) {
+    width: initial;
+  }
+
+  @media (min-width: 1100px) {
+    width: 100%;
+  }
+
+  &[data-detail='card'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding-top: 60px;
+    border-radius: 0;
+    z-index: 8;
+
+    @media (min-width: 360px) {
       margin: 0;
     }
 
-    &[data-expand='false'] {
-      margin: 10px 25px 10px 15px;
+    @media (min-width: 767px) {
+      max-width: 400px;
+      height: 100vh;
+
+      box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.125);
     }
   }
 `
