@@ -2,11 +2,13 @@ import { GetStaticProps } from 'next'
 import { Fragment } from 'react'
 
 import HeaderBar from '../components/HeaderBar'
-import Product, { IProduct } from '../components/Product'
+import Product from '../components/Product'
+
+import { IProduct } from '../interfaces/product'
 
 import { Container } from '../styles/elements/Container'
 import { HSpacer } from '../styles/elements/HSpacer'
-import { Text } from '../styles/elements/Text'
+import { Title } from '../styles/elements/Title'
 
 interface HomeProps {
   products: IProduct[]
@@ -17,13 +19,11 @@ export default function Home({ products }: HomeProps) {
     <Fragment>
       <HeaderBar />
 
-      <HSpacer space="1rem"/>
+      <HSpacer space="1rem" />
 
-      <Text>
-        <h1>Products</h1>
-      </Text>
+      <Title>Plants</Title>
 
-      <HSpacer space="1rem"/>
+      <HSpacer space="1rem" />
 
       <Container>
         {products.map(product => (

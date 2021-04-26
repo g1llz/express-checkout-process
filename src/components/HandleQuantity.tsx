@@ -18,13 +18,22 @@ export default function HandleQuantity({
 }: QuantityProps) {
   return (
     <Fragment>
-      <span>Qty</span>
+      <span>Quantity</span>
       <Flex content="flex-start">
-        <CircleButton mini="true" onClick={onIncrement}>
+        <CircleButton
+          bgColor="#1c733a"
+          onClick={onIncrement}
+          data-minibutton="true"
+        >
           <FontAwesomeIcon icon={faPlus} data-testid="plus-icon" />
         </CircleButton>
         <h2 style={{ margin: 5 }}>{quantity}</h2>
-        <CircleButton mini="true" onClick={onDecrement}>
+        <CircleButton
+          bgColor="#1c733a"
+          onClick={onDecrement}
+          disabled={quantity <= 1}
+          data-minibutton="true"
+        >
           <FontAwesomeIcon icon={faMinus} data-testid="minus-icon" />
         </CircleButton>
       </Flex>
