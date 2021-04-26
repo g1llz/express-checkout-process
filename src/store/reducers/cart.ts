@@ -1,5 +1,5 @@
 import { HYDRATE } from 'next-redux-wrapper'
-import { IProduct } from '../../components/Product'
+import { IProduct } from '../../interfaces/product'
 import { IReduxAction } from '../IRedux'
 
 const initialState = {

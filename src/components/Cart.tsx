@@ -21,6 +21,7 @@ export default function Cart() {
   const router = useRouter()
 
   const handleClickOutside = () => setToggle(false)
+  
   const handleResetCart = () => {
     dispatch(resetCart())
     setToggle(false)
@@ -40,7 +41,7 @@ export default function Cart() {
         <FontAwesomeIcon
           icon={faShoppingCart}
           data-testid="cart-icon"
-          size="lg"
+          size="2x"
         />
       </CircleButton>
 

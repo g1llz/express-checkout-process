@@ -1,7 +1,7 @@
 import ProductList from './ProductList'
 
 import { Flex } from '../styles/elements/Flex'
-import { SummaryWrapper } from '../styles/elements/SummaryWrapper'
+import { WrapperSummary } from '../styles/elements/Wrapper'
 import { HSpacer } from '../styles/elements/HSpacer'
 import { Button } from '../styles/elements/Button'
 
@@ -19,7 +19,7 @@ export default function CartSummary({
   onCheckout
 }: SummaryProps) {
   return (
-    <SummaryWrapper data-testid="cart-summary">
+    <WrapperSummary data-testid="cart-summary">
       <Flex direction="column">
         <ProductList products={products} amount={amount} />
 
@@ -39,6 +39,6 @@ export default function CartSummary({
           </Button>
         </Flex>
       </Flex>
-    </SummaryWrapper>
+    </WrapperSummary>
   )
 }
