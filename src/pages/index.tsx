@@ -35,7 +35,7 @@ export default function Home({ products }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const req = await fetch('http://localhost:3000/products.json')
+  const req = await fetch(`${process.env.URL_DATA}/products.json`)
   const data = await req.json()
 
   return {
