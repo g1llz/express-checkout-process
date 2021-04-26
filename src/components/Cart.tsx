@@ -1,86 +1,57 @@
-import { Fragment, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useRouter } from 'next/router'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { resetCart } from '../store/actions/cart'
+import { useCart } from '../hooks/use-cart'
+import useOnClickOutside from '../hooks/use-on-click-outside'
 
-import { Box } from '../styles/elements/Box'
-import { Flex } from '../styles/elements/Flex'
-import { List, ListItem } from '../styles/elements/List'
-import { SummaryWrapper } from '../styles/elements/SummaryWrapper'
-import { HSpacer } from '../styles/elements/HSpacer'
-import { Button, CircleButton } from '../styles/elements/Button'
+import { CircleButton } from '../styles/elements/Button'
+import { Badget } from '../styles/elements/Badget'
 
-interface ICart {
-  products: [
-    {
-      id: number
-      title: string
-      size: string
-      quantity: number
-      price: number
-      amount: number
-    }
-  ]
-  amount: number
-}
+import CartSummary from './CartSummary'
 
 export default function Cart() {
   const [toggle, setToggle] = useState(false)
+  const { products, amount } = useCart()
+  const ref = useRef(null)
   const dispatch = useDispatch()
-  const { products, amount } = useSelector(
-    (state: { cart: ICart }) => state.cart
-  )
+  const router = useRouter()
+
+  const handleClickOutside = () => setToggle(false)
+  const handleResetCart = () => {
+    dispatch(resetCart())
+    setToggle(false)
+  }
+
+  useOnClickOutside(ref, handleClickOutside)
 
   return (
-    <Fragment>
-      <CircleButton bgColor="#0E5C22" opacity={0.7} onClick={() => setToggle(!toggle)}>
-        <span style={{ marginRight: 5 }} data-testid="count-products">
-          {products.length}
-        </span>
-        <FontAwesomeIcon icon={faShoppingCart} data-testid="cart-icon" />
+    <div ref={ref} style={{ zIndex: 10 }}>
+      <CircleButton
+        bgColor="rgba(109, 109, 109, 0.2)"
+        textColor="#4E4E4E"
+        onClick={() => setToggle(!toggle)}
+        disabled={!products.length}
+      >
+        <Badget data-testid="count-products">{products.length}</Badget>
+        <FontAwesomeIcon
+          icon={faShoppingCart}
+          data-testid="cart-icon"
+          size="lg"
+        />
       </CircleButton>
 
       {toggle && (
-        <SummaryWrapper data-testid="cart-summary">
-          <Box width="300px">
-            <List>
-              {products.map(product => (
-                <ListItem key={product.id}>
-                  <Flex>
-                    <span>
-                      {product.quantity}x <strong>{product.title}</strong>
-                    </span>
-                    <span>{product.amount}</span>
-                  </Flex>
-                </ListItem>
-              ))}
-            </List>
-
-            <HSpacer space="1rem" />
-
-            <Flex>
-              <span>Total</span>
-              <h2>${amount}</h2>
-            </Flex>
-
-            <HSpacer />
-
-            <Flex content="flex-end">
-              <Button
-                maxWidth="200px"
-                bgColor="transparent"
-                textColor="#0d2020"
-                onClick={() => dispatch(resetCart())}
-              >
-                Clear
-              </Button>
-              <Button maxWidth="200px">Go to checkout</Button>
-            </Flex>
-          </Box>
-        </SummaryWrapper>
+        <CartSummary
+          products={products}
+          amount={amount}
+          onResetCart={handleResetCart}
+          onCheckout={() => router.push('/checkout')}
+        />
       )}
-    </Fragment>
+    </div>
   )
 }
