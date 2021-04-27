@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { Fragment } from 'react'
 
@@ -17,6 +18,10 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   return (
     <Fragment>
+      <Head>
+        <title>HousePlant | Home</title>
+      </Head>
+
       <HeaderBar />
 
       <HSpacer space="1rem" />
