@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDolly } from '@fortawesome/free-solid-svg-icons'
 
 import Form from '../components/Form'
 import HeaderBar from '../components/HeaderBar'
@@ -12,7 +14,6 @@ import { resetCart } from '../store/actions/cart'
 
 import { Container } from '../styles/elements/Container'
 import { HSpacer } from '../styles/elements/HSpacer'
-import { Title } from '../styles/elements/Title'
 import { Button } from '../styles/elements/Button'
 import { Flex } from '../styles/elements/Flex'
 import { WrapperList } from '../styles/elements/Wrapper'
@@ -47,7 +48,11 @@ export default function Checkout() {
 
       <HSpacer space="1rem" />
 
-      <Title>Checkout</Title>
+      <Flex direction="column">
+        <FontAwesomeIcon icon={faDolly} size="3x" color="#1c923a" />
+        <HSpacer space="0.5rem" />
+        <h1>Checkout</h1>
+      </Flex>
 
       <HSpacer space="1rem" />
 

@@ -23,7 +23,7 @@ export const Container = styled.div`
 
   @media (min-width: 1100px) {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: nowrap;
 
     max-width: 1200px;

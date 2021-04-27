@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { resetCart } from '../store/actions/cart'
@@ -39,7 +39,7 @@ export default function Cart() {
       >
         <Badget data-testid="count-products">{products.length}</Badget>
         <FontAwesomeIcon
-          icon={faShoppingCart}
+          icon={faShoppingBag}
           data-testid="cart-icon"
           size="2x"
         />

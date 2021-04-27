@@ -22,20 +22,5 @@ export const Flex = styled.div<FlexProps>`
       max-width: 500px;
       justify-content: center;
     }
-
-    &[data-pages='checkout-product'] {
-      max-width: 500px;
-      justify-content: flex-start;
-
-      margin-left: 30px;
-    }
-
-    &[data-pages='checkout-no-product'] {
-      max-width: 500px;
-      justify-content: flex-start;
-      align-items: flex-start;
-      
-      margin-left: 30px;
-    }
   }
 `
