@@ -165,13 +165,8 @@ export const Box = styled.div`
       }
 
       [data-wrapper='detail'] {
-        top: 130px;
-        left: 160px;
-
-        img {
-          width: 200px !important;
-          height: 200px !important;
-        }
+        top: 50px;
+        left: 130px;
       }
     }
   }

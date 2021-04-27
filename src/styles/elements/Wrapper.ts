@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const WrapperSummary = styled.div`
   position: absolute;
   display: block;
-  width: 100%;
+  width: 100vw;
 
   top: -10px;
   right: -10px;
@@ -14,7 +14,7 @@ export const WrapperSummary = styled.div`
   border-radius: 0;
   padding: 40px 0 20px 0;
 
-  box-shadow: 0 3px 7px 0px #c5c5c5;
+  box-shadow: 0 2px 7px 0px #A5A5A5;
 
   @media (min-width: 300px) and (max-width: 359px) {
     > div {
@@ -23,6 +23,8 @@ export const WrapperSummary = styled.div`
   }
 
   @media (min-width: 360px) {
+    max-width: 400px;
+
     > div {
       padding: 0 20px;
     }

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
@@ -38,6 +39,10 @@ export default function Checkout() {
 
   return (
     <Fragment>
+      <Head>
+        <title>HousePlant | Checkout</title>
+      </Head>
+
       <HeaderBar />
 
       <HSpacer space="1rem" />
@@ -48,7 +53,7 @@ export default function Checkout() {
 
       <Container>
         {!products.length && (
-          <Flex direction="column" content="center">
+          <Flex direction="column" data-pages="checkout-no-product">
             <h2>Your cart is empty!</h2>
             <HSpacer />
             <Button onClick={() => router.push('/')}>Go back to shop</Button>
@@ -56,7 +61,7 @@ export default function Checkout() {
         )}
 
         {!!products.length && (
-          <Flex direction="column">
+          <Flex direction="column" data-pages="checkout-product">
             <p>
               Almost there! Fill out the form with shipping and contact
               information.

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 import { useDispatch } from 'react-redux'
@@ -33,6 +34,10 @@ export default function Success() {
 
   return (
     <Fragment>
+      <Head>
+        <title>HousePlant | Success!</title>
+      </Head>
+
       <HeaderBar />
 
       <HSpacer space="1rem" />

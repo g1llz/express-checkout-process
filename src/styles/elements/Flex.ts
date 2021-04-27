@@ -13,7 +13,7 @@ export const Flex = styled.div<FlexProps>`
 
   display: flex;
   justify-content: ${props => props.content || 'space-between'};
-  align-items: ${props => props.alignItems || 'center' };
+  align-items: ${props => props.alignItems || 'center'};
 
   flex-direction: ${props => props.direction || 'initial'};
 
@@ -21,6 +21,21 @@ export const Flex = styled.div<FlexProps>`
     &[data-pages='success'] {
       max-width: 500px;
       justify-content: center;
+    }
+
+    &[data-pages='checkout-product'] {
+      max-width: 500px;
+      justify-content: flex-start;
+
+      margin-left: 30px;
+    }
+
+    &[data-pages='checkout-no-product'] {
+      max-width: 500px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      
+      margin-left: 30px;
     }
   }
 `
